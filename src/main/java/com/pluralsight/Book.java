@@ -45,8 +45,8 @@ public class Book {
     public void checkIn() {
         this.checkedOutTo = "";
         this.isCheckedOut = false;
-
     }
+
     public void display() {
         System.out.println("+------------------------------------------+");
         System.out.println("| ID: " + id);
@@ -57,7 +57,24 @@ public class Book {
             System.out.println("| Checked Out To: " + checkedOutTo);
         }
         System.out.println("+------------------------------------------+");
-
-
     }
+
+    @Override
+    public String toString() {
+        String card = "+------------------------------------------+\n" +
+                "| ID: " + id + "\n" +
+                "| Title: " + title + "\n" +
+                "| ISBN: " + isbn + "\n" +
+                "| Checked Out: " + (isCheckedOut ? "Yes" : "No") + "\n";
+
+        if (isCheckedOut) {
+            card += "| Checked Out To: " + checkedOutTo + "\n";
+        }
+
+        card += "+------------------------------------------+";
+
+        return card;
+    }
+
+
 }
