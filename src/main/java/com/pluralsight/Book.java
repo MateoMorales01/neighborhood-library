@@ -8,6 +8,7 @@ public class Book {
     private boolean isCheckedOut;
     private String checkedOutTo;
 
+
     public Book(int id, String isbn, String title) {
         this.id = id;
         this.isbn = isbn;
@@ -46,6 +47,16 @@ public class Book {
         this.isCheckedOut = false;
 
     }
+    public void display() {
+        System.out.println("+------------------------------------------+");
+        System.out.println("| ID: " + id);
+        System.out.println("| Title: " + title);
+        System.out.println("| ISBN: " + isbn);
+        System.out.println("| Checked Out: " + (isCheckedOut ? "Yes" : "No"));
+        if (isCheckedOut) {
+            System.out.println("| Checked Out To: " + checkedOutTo);
+        }
+        System.out.println("+------------------------------------------+");
 
 
 }
